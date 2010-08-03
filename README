@@ -1,0 +1,6 @@
+Twister commander!
+
+Author: Michal [balor] Thoma - http://balor.pl
+
+Dead simple python script, to help people who wants to play Twister without person spinning the clock.
+Script requires pyttsx python library and one of these speech engines installed: espeak (Linux), nsss (MacOsX), sapi5 (Windows).
