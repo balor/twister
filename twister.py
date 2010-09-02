@@ -6,9 +6,9 @@ from optparse import OptionParser
 
 parser = OptionParser()
 parser.add_option('-i', '--interval', dest='interval', default=3, type=int,
-                help='Amount of time between twister commands. In seconds. Default is 3.')
+                help='Number of seconds between twister commands. Default is 3.')
 parser.add_option('-p', '--probe', dest='probe', default=100, type=int,
-                help='Amount of twister commands to be generated before speech engine start.')
+                help='Amount of twister commands to be generated before speech engine init.')
 parser.add_option('-s', '--silent', action='store_true', dest='silent', default=False,
                 help='Don\'t use speech engine, just output text messages.')
 
@@ -30,7 +30,7 @@ def getRandomTwisterCommand():
     random.seed(time.time())
     limb = limbs[random.randint(0,len(limbs)-1)]
     color = colors[random.randint(0,len(colors)-1)]
-    return 'Next move: ' + limb + ' to ' + color + '.'
+    return 'Next move: %s to %s'%(limb, color)
 
 def onWord(name, location, length):
     time.sleep(options.interval)
