@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import pyttsx
 import random
 import time
@@ -30,7 +30,7 @@ def getRandomTwisterCommand():
     random.seed(time.time())
     limb = limbs[random.randint(0,len(limbs)-1)]
     color = colors[random.randint(0,len(colors)-1)]
-    return 'Next move: %s to %s'%(limb, color)
+    return 'Next move: {0} to {1}'.format(limb, color)
 
 def onWord(name, location, length):
     time.sleep(options.interval)
